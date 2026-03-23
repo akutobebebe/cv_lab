@@ -1,0 +1,149 @@
+:root {
+  --bg: #e9e7e2;
+  --paper: #f7f6f3;
+  --text: #1f1f1f;
+  --muted: #4f4f4f;
+  --line: #bcb7ad;
+  --accent-warm: #efc857;
+  --accent-cool: #8fd4ea;
+  --section-gap: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 16px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, #f2e6a4 0 70px, transparent 72px),
+    radial-gradient(circle at 88% 88%, #bfe8f6 0 46px, transparent 48px),
+    var(--bg);
+}
+
+main,
+header,
+footer {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+header,
+section,
+footer {
+  background-color: var(--paper);
+  border: 1px dashed var(--line);
+  position: relative;
+}
+
+header {
+  margin-bottom: var(--section-gap);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 0.95;
+  letter-spacing: 0.4px;
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+header p:first-of-type {
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+header p:nth-child(n + 4) {
+  text-align: right;
+  font-size: 0.94rem;
+}
+
+hr {
+  max-width: 900px;
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 0 auto var(--section-gap);
+}
+
+main {
+  display: grid;
+  gap: var(--section-gap);
+}
+
+section {
+  padding: 14px 16px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 7px 0;
+}
+
+article {
+  padding: 10px 0;
+  border-top: 1px dashed var(--line);
+}
+
+article:first-of-type {
+  border-top: none;
+}
+
+ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+footer {
+  margin-top: var(--section-gap);
+  padding: 12px 16px;
+  color: var(--muted);
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 16px 10px;
+  }
+
+  header {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  header p:nth-child(n + 4) {
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+}
