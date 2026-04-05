@@ -10,6 +10,7 @@
 
 	<header>
 		<h1>Румянцев Нікіта</h1>
+		<button id="theme-toggle" type="button" aria-label="Перемкнути тему">Нічна тема</button>
 		<p><strong>Бажана посада:</strong> Junior Backend Developer</p>
 		<p><strong>Місто:</strong> Львів, Україна</p>
 		<p><strong>Email:</strong> rumnikita@gmail.com</p>
@@ -84,12 +85,44 @@
 				співпраці та нових задач.
 			</p>
 		</section>
+
+		<section>
+			<h2>Коментарі попередніх роботодавців</h2>
+			<p id="comments-status">Завантаження коментарів...</p>
+			<ol id="comments-list"></ol>
+		</section>
 	</main>
 
 	<hr>
 
 	<footer>
 		<p>Оновлено: 1 березня 2026</p>
+		<div id="storage-view" aria-live="polite"></div>
 	</footer>
+
+	<div id="feedback-modal" class="modal" aria-hidden="true">
+		<div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="feedback-title">
+			<button id="modal-close" type="button" class="modal-close" aria-label="Закрити">x</button>
+			<h2 id="feedback-title">Зворотний зв'язок</h2>
+			<p>Залиште ваші контакти та повідомлення.</p>
+			<form id="feedback-form" action="https://formspree.io/f/xvzvvjkz" method="POST">
+				<label for="name">Iм'я</label>
+				<input id="name" name="name" type="text" required>
+
+				<label for="email">Email</label>
+				<input id="email" name="email" type="email" required>
+
+				<label for="phone">Номер телефону</label>
+				<input id="phone" name="phone" type="tel" required>
+
+				<label for="message">Ваше повідомлення</label>
+				<textarea id="message" name="message" rows="5" required></textarea>
+
+				<button type="submit">Відправити</button>
+			</form>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
 </body>
 </html>
