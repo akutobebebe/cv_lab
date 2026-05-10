@@ -1,0 +1,269 @@
+:root {
+  --bg: #e9e7e2;
+  --paper: #f7f6f3;
+  --text: #1f1f1f;
+  --muted: #4f4f4f;
+  --line: #bcb7ad;
+  --accent-warm: #efc857;
+  --accent-cool: #8fd4ea;
+  --section-gap: 18px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #15181d;
+  --paper: #222831;
+  --text: #eaf2ff;
+  --muted: #a7b1c2;
+  --line: #4b5a71;
+  --accent-warm: #edc85f;
+  --accent-cool: #73bcd1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 16px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, #f2e6a4 0 70px, transparent 72px),
+    radial-gradient(circle at 88% 88%, #bfe8f6 0 46px, transparent 48px),
+    var(--bg);
+}
+
+main,
+header,
+footer {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+header,
+section,
+footer {
+  background-color: var(--paper);
+  border: 1px dashed var(--line);
+  position: relative;
+}
+
+header {
+  margin-bottom: var(--section-gap);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 0.95;
+  letter-spacing: 0.4px;
+}
+
+#theme-toggle {
+  justify-self: end;
+  border: 1px solid var(--line);
+  background: linear-gradient(120deg, var(--accent-warm), var(--accent-cool));
+  color: #111;
+  font-weight: 700;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+header p:first-of-type {
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+header p:nth-child(n + 4) {
+  text-align: right;
+  font-size: 0.94rem;
+}
+
+hr {
+  max-width: 900px;
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 0 auto var(--section-gap);
+}
+
+main {
+  display: grid;
+  gap: var(--section-gap);
+}
+
+section {
+  padding: 14px 16px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 7px 0;
+}
+
+article {
+  padding: 10px 0;
+  border-top: 1px dashed var(--line);
+}
+
+article:first-of-type {
+  border-top: none;
+}
+
+ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+footer {
+  margin-top: var(--section-gap);
+  padding: 12px 16px;
+  color: var(--muted);
+  text-align: left;
+}
+
+#storage-view {
+  margin-top: 12px;
+}
+
+#storage-view h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+  vertical-align: top;
+  text-align: left;
+}
+
+#comments-list {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.comment-item {
+  margin-bottom: 10px;
+  border: 1px dashed var(--line);
+  padding: 8px;
+  background-color: color-mix(in srgb, var(--paper) 90%, var(--accent-cool));
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 12px;
+  z-index: 1000;
+}
+
+.modal.is-open {
+  display: grid;
+}
+
+.modal-card {
+  width: min(600px, 100%);
+  background: var(--paper);
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 18px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+#feedback-form {
+  display: grid;
+  gap: 8px;
+}
+
+#feedback-form input,
+#feedback-form textarea,
+#feedback-form button {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  padding: 8px;
+  font: inherit;
+}
+
+#feedback-form button {
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--accent-warm), var(--accent-cool));
+  color: #111;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 16px 10px;
+  }
+
+  header {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  #theme-toggle {
+    justify-self: start;
+  }
+
+  header p:nth-child(n + 4) {
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+}

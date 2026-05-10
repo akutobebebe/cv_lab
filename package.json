@@ -1,0 +1,28 @@
+{
+  "name": "cv_lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akutobebebe/cv_lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/akutobebebe/cv_lab/issues"
+  },
+  "homepage": "https://github.com/akutobebebe/cv_lab#readme",
+  "dependencies": {
+    "@hapi/hapi": "^21.4.8",
+    "@hapi/inert": "^7.1.0",
+    "dotenv": "^17.4.2",
+    "resend": "^6.12.2"
+  }
+}
